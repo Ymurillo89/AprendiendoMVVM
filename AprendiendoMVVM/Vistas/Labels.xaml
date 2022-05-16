@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AprendiendoMVVM.VistaModelo"
+             x:Class="AprendiendoMVVM.Vistas.Labels">
+    
+    <StackLayout>
+        <StackLayout.BindingContext>
+            <local:MVLearnLabel/>
+        </StackLayout.BindingContext>
+        
+    
+        <Label Text="Número1:"
+               
+                TextColor="Beige"
+                FontSize="Large"
+                FontAttributes="Bold"
+                VerticalOptions="Center"
+                />
+        <Entry PlaceholderColor="White"
+                       Placeholder="Ingrese número"
+                       HorizontalOptions="FillAndExpand"
+                       TextColor="White"
+                       Text="{Binding N1}"
+                       Keyboard="Numeric"
+                    />
+
+        <Label Text="Número2:"
+                       TextColor="Beige"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       />
+        <Entry PlaceholderColor="White"
+                       Placeholder="Ingrese número"
+                       HorizontalOptions="FillAndExpand"
+                       TextColor="White"
+                       Text="{Binding N2}"
+                       Keyboard="Numeric"
+                    />
+        
+
+        <Button Text="Calcular"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Command="{Binding Suma }"
+            />
+
+        <Label 
+               x:Name="label"
+               Margin="20"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               Text="{Binding Res}"
+               />
+        <Label 
+               Margin="20"
+               FontSize="25"
+               HorizontalOptions="Center"
+               Text="{Binding Res}"
+               />
+    </StackLayout>
+</ContentPage>

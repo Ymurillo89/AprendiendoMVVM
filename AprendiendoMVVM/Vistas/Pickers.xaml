@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AprendiendoMVVM.Vistas.Pickers">
+    <StackLayout Margin="20" >
+        <Label Text="PICKERS" 
+               HorizontalOptions="Center"
+               FontSize="25"
+               Margin="20"/>
+        <Picker Title="Tipo Empleado"
+                SelectedItem="{Binding SeleccionarTipoCargo}">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Administrador</x:String>
+                    <x:String>Cajero</x:String>
+                </x:Array>
+            </Picker.ItemsSource>  
+        </Picker>
+        <DatePicker Margin="20"
+                    Date="{Binding Fecha,Mode=TwoWay}">
+            <DatePicker.Format>
+                dd/MM/yyyy
+            </DatePicker.Format>
+        </DatePicker>
+        <Label Text="Respuesta:"
+               FontSize="20"/>
+        <Label Text="{Binding ResultadoFecha,Mode=TwoWay}"
+               FontSize="20"/>
+    </StackLayout>
+</ContentPage>
